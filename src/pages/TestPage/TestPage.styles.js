@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
-export const Wrapper = styled('div')`
+export const Wrapper = styled("div")`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,23 +8,23 @@ export const Wrapper = styled('div')`
   margin: 36px;
 `;
 
-export const Number = styled('div')`
+export const Number = styled("div")`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 36px;
+  margin-top: 36px;
 `;
 
-export const Text = styled('div')`
+export const Text = styled("div")`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 36px;
-  width: 940px;
+  margin: 24px;
+  max-width: 940px;
 `;
 
-export const Answers = styled('div')`
+export const Answers = styled("div")`
   display: flex;
   flex-direction: column;
-  margin: 36px;
+  margin-bottom: 36px;
 `;
