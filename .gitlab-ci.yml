@@ -1,0 +1,53 @@
+stages:
+  - build
+  - deploy
+
+build prod:
+  image: node:10.15.0-stretch
+  stage: build
+  only:
+    - tags
+  script:
+    - npm install -g react
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      # Создание директории
+      - dist/
+    expire_in: 1 hour
+
+deploy prod:
+  image: python:latest
+  stage: deploy
+  only:
+    - tags
+  script:
+    - pip install awscli
+    - aws s3 sync ./dist s3://testtesta
+
+build stage:
+  image: node:10.15.0-stretch
+  stage: build
+  only:
+    - master
+  script:
+    - npm install -g react
+    # Установка зависимостей
+    - npm install
+    # Сборка приложения
+    - npm run build-dev
+  artifacts:
+    paths:
+      # Создание директории
+      - dist/
+    expire_in: 1 hour
+
+deploy stage:
+  image: python:latest
+  stage: deploy
+  only:
+    - master
+  script:
+    - pip install awscli
+    - aws s3 sync ./dist s3://testtesta
