@@ -26,9 +26,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "formik": "^1.5.8",
-    "husky": "^3.0.9",
     "jquery": "^3.4.1",
-    "lint-staged": "^9.4.2",
     "lodash": "^4.17.15",
     "mobx": "^5.14.2",
     "mobx-react": "^6.1.4",
@@ -56,17 +54,6 @@
     "@storybook/addons": "^5.2.5",
     "@storybook/react": "^5.2.5",
     "babel-eslint": "^10.0.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write",
-      "git add"
-    ]
   },
   "eslintConfig": {
     "extends": "react-app"
