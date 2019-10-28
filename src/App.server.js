@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const path = require('path');
 const config = require('../.env.json');
 
-const PORT = process.env.PORT || 3000;
 const app = express();
 
 async function start() {
@@ -13,21 +12,27 @@ async function start() {
       useNewUrlParser: true,
       useFindAndModify: false,
       useUnifiedTopology: true,
-      // reconnectTries: 30,
-      // reconnectInterval: 500, // in ms
+      reconnectTries: 30,
+      reconnectInterval: 500, // in ms
     })
       .then(() => console.log('DB Connected!'));
 
-    app.get('/', (req, res) => {
-      res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    app.use(express.static(path.join(__dirname, 'client/build')));
+
+    app.get('/api/getList', (req, res) => {
+      const list = ['item1', 'item2', 'item3'];
+      res.json(list);
+      console.log('Sent list of items');
     });
 
-    // app.get('*', (req, res) => {
-    //   res.sendFile(path.join(`${__dirname}/App/App.jsx`));
-    // });
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(`${__dirname}/client/build/index.html`));
+    });
+
+    const PORT = process.env.PORT || 5000;
 
     app.listen(PORT, () => {
-      console.log(`App is listening on port ${PORT}`);
+      console.log('Server has been started...');
     });
   } catch (error) {
     console.log(error);
@@ -35,9 +40,3 @@ async function start() {
 }
 
 start();
-
-app.get('/api/getList', (req, res) => {
-  const list = ['item1', 'item2', 'item3'];
-  res.json(list);
-  console.log('Sent list of items');
-});
