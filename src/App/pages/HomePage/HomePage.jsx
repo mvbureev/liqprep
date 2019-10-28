@@ -1,20 +1,33 @@
-import React, { PureComponent } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
 
+class List extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      apiResponse: '',
+    };
+  }
 
-class Home extends PureComponent {
+  componentDidMount() {
+    this.callAPI();
+  }
+
+  callAPI() {
+    fetch('http://localhost:8080/testAPI')
+      .then((res) => res.text())
+      .then((apiResponse) => this.setState({
+        apiResponse,
+      }));
+  }
+
   render() {
+    const { apiResponse } = this.state;
     return (
       <div className="App">
-        <h1>Project Home</h1>
-        {/* Link to List.js */}
-        <Link to="./list">
-          <button variant="raised" type="button">
-            My List
-          </button>
-        </Link>
+        <p className="App-intro">{apiResponse}</p>
       </div>
     );
   }
 }
-export default Home;
+
+export default List;
