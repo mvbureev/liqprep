@@ -18,9 +18,3 @@ router.get('/create', (req, res) => {
     isCreate: true,
   });
 });
-
-// router.post('/create', async (req, res) => {
-//   const test = new TestModel({
-
-//   })
-// });

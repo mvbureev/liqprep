@@ -1,6 +1,4 @@
 import { model, Schema } from 'mongoose';
-// import bcrypt from 'bcrypt';
-// import { isEmail } from 'validator';
 
 const TestSchema = new Schema({
   text: {
