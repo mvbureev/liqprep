@@ -1,6 +1,7 @@
-import { model, Schema } from 'mongoose';
+const { model, Schema } = require('mongoose');
 
 const TestSchema = new Schema({
+  _id: Schema.Types.ObjectId,
   text: {
     type: String,
     default: null,
@@ -26,4 +27,4 @@ const TestSchema = new Schema({
   },
 });
 
-export default model('Test', TestSchema);
+module.exports = model('Test', TestSchema);
