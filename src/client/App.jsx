@@ -1,14 +1,20 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, StrictMode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import './globalstyle.css';
+import { Provider } from 'mobx-react';
+import listStore from './store';
 import Layout from './layout/Layout';
+import './globalstyle.css';
 
 class App extends PureComponent {
   render() {
     return (
-      <BrowserRouter>
-        <Layout />
-      </BrowserRouter>
+      <StrictMode>
+        <Provider listStore={...listStore}>
+          <BrowserRouter>
+            <Layout />
+          </BrowserRouter>
+        </Provider>
+      </StrictMode>
     );
   }
 }
