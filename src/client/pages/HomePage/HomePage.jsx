@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class List extends Component {
-
+class List extends PureComponent {
   render() {
-    const { apiResponse } = this.state;
     return (
-      <div className="App">
-        <p className="App-intro">{apiResponse}</p>
+      <div>
+        Home
       </div>
     );
   }

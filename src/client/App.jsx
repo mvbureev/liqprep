@@ -1,22 +1,13 @@
 import React, { PureComponent } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from './pages/HomePage';
+import { BrowserRouter } from 'react-router-dom';
 import './globalstyle.css';
+import Layout from './layout/Layout';
 
 class App extends PureComponent {
   render() {
-    const RootApp = () => (
-      <div>
-        <Switch>
-          <Route exact path="/" component={Home} />
-        </Switch>
-      </div>
-    );
     return (
       <BrowserRouter>
-        <Switch>
-          <RootApp />
-        </Switch>
+        <Layout />
       </BrowserRouter>
     );
   }
