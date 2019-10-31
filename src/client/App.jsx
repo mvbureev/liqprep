@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './pages/HomePage';
+import './globalstyle.css';
 
 class App extends PureComponent {
   render() {

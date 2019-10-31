@@ -4,7 +4,7 @@ const debug = require('debug')('api:server');
 const http = require('http');
 const mongoose = require('mongoose');
 const config = require('../../../.env.json');
-const app = require('../app');
+const app = require('../server');
 
 function normalizePort(val) {
   const port = parseInt(val, 10);

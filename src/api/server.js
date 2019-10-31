@@ -38,4 +38,9 @@ app.use((err, req, res, next) => {
   res.render('error');
 });
 
+// все статические файлы в папку public
+app.use('/', express.static('public'));
+// запросы к api выносите в отдельный файл и подключаете как миделвер
+app.use('/api', testApiRouter);
+
 module.exports = app;
