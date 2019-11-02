@@ -1,8 +1,7 @@
 const testRouter = require('./testRoutes');
 
 function routes(app) {
-  app.use('/', testRouter);
-  app.use('/test', testRouter);
+  app.use('/api/test', testRouter);
 }
 
 module.exports = routes;

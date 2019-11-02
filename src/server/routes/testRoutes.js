@@ -1,9 +1,11 @@
 const express = require('express');
-const testGetAll = require('../api/TestApi/testGetAll');
-const testGetById = require('../api/TestApi/testGetById');
-const testUpdateById = require('../api/TestApi/testUpdateById');
-const testCreate = require('../api/TestApi/testCreate');
-const testDeleteById = require('../api/TestApi/testDeleteById');
+const {
+  testGetAll,
+  testCreate,
+  testGetById,
+  testUpdateById,
+  testDeleteById,
+} = require('../api/testApi');
 
 const router = express.Router();
 
