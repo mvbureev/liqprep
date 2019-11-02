@@ -1,23 +1,26 @@
-import React, { useState } from 'react';
+import React, { PureComponent } from 'react';
 import {
-  Collapse,
+  // Collapse,
   Navbar,
-  NavbarToggler,
+  // NavbarToggler,
   NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
+  // Nav,
+  // NavItem,
+  // NavLink,
 } from 'reactstrap';
 
-const Example = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggle = () => setIsOpen(!isOpen);
+class Header extends PureComponent {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = { isOpen: false };
+  // }
 
-  return (
-    <div>
-      <Navbar color="light" light expand="md">
+  render() {
+    // const { isOpen } = this.state;
+    return (
+      <Navbar color="dark" dark expand="md">
         <NavbarBrand href="/">LiqPrep</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
+        {/* <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
@@ -27,10 +30,11 @@ const Example = (props) => {
               <NavLink href="https://gitlab.com/iburey/liqprep" target="_blank">GitLab</NavLink>
             </NavItem>
           </Nav>
-        </Collapse>
+        </Collapse> */}
       </Navbar>
-    </div>
-  );
-};
 
-export default Example;
+    );
+  }
+}
+
+export default Header;

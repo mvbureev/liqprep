@@ -4,7 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Routes from './Routes';
 
-class App extends PureComponent {
+class Layout extends PureComponent {
   render() {
     return (
       <>
@@ -22,4 +22,4 @@ class App extends PureComponent {
   }
 }
 
-export default App;
+export default Layout;
