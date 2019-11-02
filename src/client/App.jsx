@@ -1,17 +1,18 @@
 import React, { PureComponent, StrictMode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'mobx-react';
-import listStore from './store';
+import stores from '../client/store';
 import Layout from './layout/Layout';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './globalstyle.css';
 
 class App extends PureComponent {
   render() {
     return (
       <StrictMode>
-        <Provider listStore={...listStore}>
+        <Provider {...stores}>
           <BrowserRouter>
-            <Layout />
+            <Layout className="App" />
           </BrowserRouter>
         </Provider>
       </StrictMode>

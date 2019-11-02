@@ -1,26 +1,24 @@
-// import { observable, computed } from 'mobx';
-// import TodoListView from "./TodoListView.js";
-// import registerServiceWorker from "./registerServiceWorker";
+import { observable, action } from 'mobx';
+import axios from 'axios';
 
-// const todoStore = title => {
-// return {
-// @observable title: title,
-// @observable finished: false,
-// id: Math.random()
-// };
-// };
+export class UserStore {
+  @observable public title = {};
 
-// const todoListStore = {
-// @observable todos: [],
-// @computed get unfinishedTodoCount() {
-// return todoListStore.todos.filter(todo => !todo.finished).length;
-// }
-// };
+  constructor() {
+    this.fetchData();
+  }
 
-
-// todoListStore.todos.push(
-// todoStore("Get Coffee"),
-// todoStore("Write simpler code")
-// );
-
-// todoListStore.todos[0].finished = true;
+ @action
+  private fetchData() {
+    axios.get('http://localhost:8080/')
+      .then(response => {
+        console.log(response.data, '@@@');
+      })
+      .then(response => {
+        this.title = response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+}
