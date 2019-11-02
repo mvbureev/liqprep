@@ -1,1 +1,5 @@
-export { default } from './stores';
+import TestStore from './testStore';
+
+export default {
+  testStore: new TestStore(),
+};

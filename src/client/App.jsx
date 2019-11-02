@@ -1,7 +1,7 @@
 import React, { PureComponent, StrictMode } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'mobx-react';
-import stores from '../client/store';
+import stores from './store';
 import Layout from './layout/Layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './globalstyle.css';
