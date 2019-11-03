@@ -1,36 +1,40 @@
 import React, { PureComponent } from 'react';
 import {
-  // Collapse,
+  Collapse,
   Navbar,
-  // NavbarToggler,
+  NavbarToggler,
   NavbarBrand,
-  // Nav,
-  // NavItem,
-  // NavLink,
+  Nav,
+  NavItem,
+  NavLink,
 } from 'reactstrap';
 
 class Header extends PureComponent {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = { isOpen: false };
-  // }
+  constructor(props) {
+    super(props);
+    this.state = { isOpen: false };
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState((state) => ({
+      isOpen: !state.isOpen,
+    }));
+  }
 
   render() {
-    // const { isOpen } = this.state;
+    const { isOpen } = this.state;
     return (
       <Navbar color="dark" dark expand="md">
         <NavbarBrand href="/">LiqPrep</NavbarBrand>
-        {/* <NavbarToggler onClick={toggle} />
+        <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
-            <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
             <NavItem>
               <NavLink href="https://gitlab.com/iburey/liqprep" target="_blank">GitLab</NavLink>
             </NavItem>
           </Nav>
-        </Collapse> */}
+        </Collapse>
       </Navbar>
 
     );

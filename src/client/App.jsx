@@ -4,6 +4,7 @@ import { Provider } from 'mobx-react';
 import stores from './store';
 import Layout from './layout/Layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'antd/dist/antd.css';
 import './globalstyle.css';
 
 class App extends PureComponent {
