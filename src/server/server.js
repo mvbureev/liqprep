@@ -12,14 +12,18 @@ const cors = require('cors');
 const routes = require('./routes');
 const mongoConnection = require('./modules/core/db');
 
+mongoConnection();
+
 const app = express();
 
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Accept', 'application/json');
+  res.header('X-Requested-With', 'XMLHttpRequest');
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Headers, Authorization');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
   next();
 });
-
 app.disable('x-powered-by');
 
 // parse application/json
@@ -37,7 +41,6 @@ app.use(session({
   secret: 'ibureyLiqprep',
 }));
 
-mongoConnection();
 routes(app);
 app.use(errorHandler());
 app.use(logger('dev'));

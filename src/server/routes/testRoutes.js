@@ -11,8 +11,8 @@ const router = express.Router();
 
 router.get('/', testGetAll);
 router.post('/', testCreate);
-router.get('/:testId', testGetById);
-router.patch('/:testId', testUpdateById);
-router.delete('/:testId', testDeleteById);
+router.get('/:id', testGetById);
+router.patch('/:id', testUpdateById);
+router.delete('/:id', testDeleteById);
 
 module.exports = router;

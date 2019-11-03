@@ -6,7 +6,7 @@ async function testCreate(req, res) {
     answers: req.body.answers,
     trueAnswer: req.body.trueAnswer,
   });
-  console.log('@req.body', req.body);
+
   test
     .save()
     .then(() => {
@@ -18,7 +18,7 @@ async function testCreate(req, res) {
 }
 
 const testDeleteById = (req, res) => {
-  const id = req.params.testId;
+  const { id } = req.params;
   Test.remove({ _id: id })
     .exec()
     .then((doc) => {
@@ -43,7 +43,6 @@ const testGetAll = (req, res) => {
     // select: 'codewarsId -_id',
     // options: { limit: 5 },
     // })
-    // .select('-__v')
     .exec()
     .then((docs) => {
       res.status(200).json(docs);
@@ -54,9 +53,8 @@ const testGetAll = (req, res) => {
 };
 
 const testGetById = (req, res) => {
-  const id = req.params.testId;
+  const { id } = req.params;
   Test.findById(id)
-    .select('-__v')
     .exec()
     .then((doc) => {
       if (doc) {
@@ -72,7 +70,7 @@ const testGetById = (req, res) => {
 };
 
 async function testUpdateById(req, res) {
-  const id = req.params.testId;
+  const { id } = req.params;
 
   Test.update({ _id: id }, { $set: req.body })
     .exec()
