@@ -26,7 +26,7 @@
     "debug": "^2.6.9",
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
-    "express-session": "^1.17.0",
+    "express-session": "^1.17.1",
     "formik": "^1.5.8",
     "http-errors": "^1.6.3",
     "lodash": "^4.17.15",
