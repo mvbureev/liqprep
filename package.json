@@ -41,7 +41,7 @@
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0",
+    "react-dom": "^16.13.0",
     "react-icons": "^3.7.0",
     "react-icons2": "^2.5.0",
     "react-if": "^3.4.3",
