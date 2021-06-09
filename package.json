@@ -32,7 +32,7 @@
     "lodash": "^4.17.15",
     "method-override": "^3.0.0",
     "mobx": "^5.14.2",
-    "mobx-react": "^6.1.4",
+    "mobx-react": "^6.1.5",
     "moment": "^2.24.0",
     "mongoose": "^5.7.7",
     "morgan": "^1.9.1",
