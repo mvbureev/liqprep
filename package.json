@@ -13,7 +13,7 @@
   },
   "peerDependencies": {},
   "dependencies": {
-    "@babel/core": "^7.6.4",
+    "@babel/core": "^7.14.5",
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.22",
     "antd": "^3.24.3",
